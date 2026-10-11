@@ -4,7 +4,7 @@ A GitHub Action that works with the [Advanced Actions Invoker Composer](https://
 
 ## Release status
 
-The public repository is [zektec/advanced-actions-invoker-utils](https://github.com/zektec/advanced-actions-invoker-utils), included in ZekTec Tools at `packages/advanced-actions-invoker-utils`. Its first Marketplace release is pending. Use `zektec/advanced-actions-invoker-utils@main` to try it now; pin a reviewed full commit SHA for production. The `@v1` example becomes available after publishing the first release and version tags.
+Available on [GitHub Marketplace](https://github.com/marketplace/actions/advanced-actions-invoker-utils) with the [v1.0.0 release](https://github.com/zektec/advanced-actions-invoker-utils/releases/tag/v1.0.0). Use `zektec/advanced-actions-invoker-utils@v1`, or pin a reviewed full commit SHA for production. The public repository is included in ZekTec Tools at `packages/advanced-actions-invoker-utils`.
 
 ## Usage
 
@@ -65,4 +65,4 @@ Verify a standalone distribution with `node --test tests/*.test.mjs`. No depende
 
 ## License and support
 
-ISC. Dependency notices are included in standalone distributions. Report issues in the public action repository once published, or contact hi@zektec.com.
+ISC. Dependency notices are included in standalone distributions. Report issues in the [public action repository](https://github.com/zektec/advanced-actions-invoker-utils/issues), or contact hi@zektec.com.
