@@ -1,0 +1,24 @@
+name: "Advanced Actions Invoker Utils"
+description: "Parse schema, layout, style and data JSON strings and output individual properties"
+author: "ZekTec"
+branding:
+  icon: "code"
+  color: "blue"
+inputs:
+  schema:
+    description: "JSON schema that defines validation rules"
+    required: false
+  style:
+    description: "Stringified style JSON object"
+    required: false
+  layout:
+    description: "Stringified layout JSON object (UI schema)"
+    required: false
+  data:
+    description: "Stringified data JSON object (form data)"
+    required: false
+# Outputs are generated from JSON property names at runtime; metadata does not
+# support wildcard output identifiers. See README.md for their naming convention.
+runs:
+  using: "node24"
+  main: "dist/index.js"
