@@ -1,10 +1,10 @@
 # Advanced Actions Invoker Utils
 
-Parse the `schema`, `layout`, `data`, and optional `style` JSON objects used by Advanced Actions Invoker. Each top-level property becomes a workflow step output. Runs on Node.js 24 with bundled dependencies.
+A GitHub Action that works with the [Advanced Actions Invoker Composer](https://zektec.com/tools/advanced-actions-invoker) and [Chrome extension](https://chromewebstore.google.com/detail/advanced-actions-invoker/gaplomiopokomidbknbhaidpmeeneiff). Parse the generated `schema`, `layout`, `data`, and optional `style` JSON objects into workflow outputs. Runs on Node.js 24 with bundled dependencies.
 
 ## Release status
 
-The public repository is [zektec/advanced-actions-invoker-utils](https://github.com/zektec/advanced-actions-invoker-utils). Its first Marketplace release is pending. Use `zektec/advanced-actions-invoker-utils@main` to try it now; pin a reviewed full commit SHA for production. The `@v1` examples become available after the first release and version tags are published. Current authorized users of the private tools repository can use `zektec/zektec-tools/advanced-actions-invoker/utils@main`.
+The public repository is [zektec/advanced-actions-invoker-utils](https://github.com/zektec/advanced-actions-invoker-utils), included in ZekTec Tools at `packages/advanced-actions-invoker-utils`. Its first Marketplace release is pending. Use `zektec/advanced-actions-invoker-utils@main` to try it now; pin a reviewed full commit SHA for production. The `@v1` example becomes available after publishing the first release and version tags.
 
 ## Usage
 
@@ -46,7 +46,7 @@ This action parses objects; it does not validate `data` against `schema`, dispat
 
 Install [Advanced Actions Invoker](https://chromewebstore.google.com/detail/advanced-actions-invoker/gaplomiopokomidbknbhaidpmeeneiff). Design a form with the [Composer](https://zektec.com/tools/advanced-actions-invoker), then commit its `schema`, `layout`, and `data` defaults to `workflow_dispatch` inputs. Include a canonical `data` input to receive edited values. The extension renders dropdowns and checkbox lists and synchronizes JSON values for GitHub's native submission.
 
-This action can also parse JSON without the extension. The Input Runner action is a separate option for versioned payload envelopes.
+This action can also parse ordinary JSON workflow inputs without the browser extension.
 
 ## Security
 

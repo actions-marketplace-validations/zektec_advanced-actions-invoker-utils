@@ -1,5 +1,5 @@
 name: "Advanced Actions Invoker Utils"
-description: "Parse schema, layout, style and data JSON strings and output individual properties"
+description: "Parse JSON form inputs from the Advanced Actions Invoker Composer and Chrome extension into workflow outputs."
 author: "ZekTec"
 branding:
   icon: "code"
