@@ -4,12 +4,36 @@ permissions:
   contents: read
 jobs:
   verify:
-    runs-on: warp-ubuntu-2404-x64-4x
+    runs-on: ubicloud-standard-4-ubuntu-2404
     steps:
       - uses: actions/checkout@v4
+      - name: Resolve Node.js version
+        id: resolve-node-1
+        shell: bash
+        working-directory: ${{ github.workspace }}
+        env:
+          NODE_PROJECT_DIR: "."
+          NODE_VERSION: ${{ vars.NODE_VERSION }}
+        run: |
+          version=""
+          directory="$GITHUB_WORKSPACE/${NODE_PROJECT_DIR#./}"
+          while [[ "$directory" == "$GITHUB_WORKSPACE"* ]]; do
+            if [ -f "$directory/.tool-versions" ]; then
+              version="$(awk '$1 == "nodejs" { print $2; exit }' "$directory/.tool-versions")"
+              break
+            fi
+            [ "$directory" != "$GITHUB_WORKSPACE" ] || break
+            directory="$(dirname "$directory")"
+          done
+          version="${version:-${NODE_VERSION:-}}"
+          if [ -z "$version" ]; then
+            echo "Define nodejs in .tool-versions or the NODE_VERSION organization variable" >&2
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
       - uses: actions/setup-node@v4
         with:
-          node-version: '24.12.0'
+          node-version: ${{ steps.resolve-node-1.outputs.version }}
       - run: node --test tests/*.test.mjs
       - name: Run packaged action
         id: action
